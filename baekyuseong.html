@@ -226,8 +226,8 @@ document.querySelectorAll('div,span,b').forEach(el=>{
     if(n.textContent.includes('{{char}}')||n.textContent.includes('{{user}}')){
       const s=document.createElement('span');
       s.innerHTML=n.textContent
-        .replaceAll('{{char}}','<b style="color:#476b57;">백유성</b>')
-        .replaceAll('{{user}}','<b style="color:#e58b45;">유저</b>');
+        .replaceAll('{{char}}','<b style="color:#b9663d;">백유성</b>')
+        .replaceAll('{{user}}','<b style="color:#d6a84f;">유저</b>');
       n.replaceWith(s);
     }
   });
