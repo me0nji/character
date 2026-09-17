@@ -34,6 +34,51 @@ html,body{
 </style>
 
 <style>
+/* SECTION RHYTHM v2 */
+.world-section-title{
+  display:inline-block;
+  padding:5px 8px;
+  border:1px solid #2c555d;
+  border-radius:4px;
+  background:#0e252b;
+}
+.red-section-title{
+  display:inline-block;
+  padding:5px 8px;
+  border:1px solid #71383e;
+  border-radius:4px;
+  background:#2a1519;
+}
+
+/* 긴 문서의 큰 구획을 눈으로 빠르게 끊어주는 상단 광선 */
+.section-top-glow{
+  height:1px;
+  margin:-1px -28px 24px;
+  background:linear-gradient(90deg,transparent,#315d65 20%,#315d65 80%,transparent);
+  opacity:.65;
+}
+.section-top-glow.red{
+  background:linear-gradient(90deg,transparent,#7d3942 20%,#7d3942 80%,transparent);
+}
+
+/* 정보 박스 안쪽의 작은 제목을 더 또렷하게 */
+.info-kicker{
+  display:inline-block;
+  padding-bottom:4px;
+  border-bottom:1px solid rgba(121,193,197,.35);
+}
+.info-kicker.red{
+  border-bottom-color:rgba(238,126,135,.38);
+}
+
+/* 모바일에서는 신문 헤드라인이 너무 커지지 않게 */
+@media(max-width:600px){
+  .section-top-glow{margin:-1px -16px 20px;}
+}
+</style>
+
+
+<style>
 /* READABILITY / VISUAL RHYTHM */
 @media (min-width:601px){
   [style*="font-size:8px"]{font-size:9px !important;}
@@ -92,7 +137,7 @@ html,body{
   <div style="padding:28px;border-bottom:1px solid #172b31;">
 
     <div style="margin-bottom:18px;">
-      <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">01 / WORLD</span>
+      <span class="world-section-title" style="font-size:10px;color:#79bfc4;letter-spacing:3px;">01 / WORLD</span>
       <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">세계관</div>
       <div class="section-accent-line"></div>
     </div>
@@ -169,9 +214,10 @@ html,body{
 
   <!-- 02 CLASSIFICATION -->
   <div style="padding:28px;background:#09151a;border-bottom:1px solid #172b31;">
+<div class="section-top-glow"></div>
 
     <div style="margin-bottom:18px;">
-      <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">02 / CLASSIFICATION</span>
+      <span class="world-section-title" style="font-size:10px;color:#79bfc4;letter-spacing:3px;">02 / CLASSIFICATION</span>
       <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">능력 등급</div>
       <div class="section-accent-line"></div>
     </div>
@@ -238,9 +284,10 @@ html,body{
 
   <!-- 03 RESTRICTIONS -->
   <div style="padding:28px;border-bottom:1px solid #172b31;">
+<div class="section-top-glow"></div>
 
     <div style="margin-bottom:18px;">
-      <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">03 / RESTRICTIONS</span>
+      <span class="world-section-title" style="font-size:10px;color:#79bfc4;letter-spacing:3px;">03 / RESTRICTIONS</span>
       <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">능력인들의 제한</div>
       <div class="section-accent-line"></div>
     </div>
@@ -314,9 +361,10 @@ html,body{
 
   <!-- 04 S++ -->
   <div style="padding:28px;background:#160e11;border-top:1px solid #512a30;border-bottom:1px solid #512a30;">
+<div class="section-top-glow red"></div>
 
     <div style="margin-bottom:18px;">
-      <span style="font-size:10px;color:#b66068;letter-spacing:3px;">04 / EXTREME RISK</span>
+      <span class="red-section-title" style="font-size:10px;color:#df858d;letter-spacing:3px;">04 / EXTREME RISK</span>
       <div style="font-size:22px;font-weight:900;color:#f0dfe1;margin-top:5px;">S++ 특별관리대상</div>
       <div class="section-accent-line red"></div>
     </div>
@@ -392,9 +440,10 @@ html,body{
 
   <!-- 05 CIVILIAN -->
   <div style="padding:28px;border-bottom:1px solid #172b31;">
+<div class="section-top-glow"></div>
 
     <div style="margin-bottom:18px;">
-      <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">05 / CIVILIAN</span>
+      <span class="world-section-title" style="font-size:10px;color:#79bfc4;letter-spacing:3px;">05 / CIVILIAN</span>
       <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">비능력인</div>
       <div class="section-accent-line"></div>
     </div>
@@ -456,9 +505,10 @@ html,body{
 
   <!-- 06 ORGANIZATION -->
   <div style="padding:28px;background:#09151a;border-bottom:1px solid #172b31;">
+<div class="section-top-glow"></div>
 
     <div style="margin-bottom:18px;">
-      <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">06 / ORGANIZATION</span>
+      <span class="world-section-title" style="font-size:10px;color:#79bfc4;letter-spacing:3px;">06 / ORGANIZATION</span>
       <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">국가능력관리원</div>
       <div class="section-accent-line"></div>
     </div>
@@ -505,9 +555,10 @@ html,body{
 
   <!-- 07 DIAGNOSTIC -->
   <div style="padding:28px;border-bottom:1px solid #172b31;">
+<div class="section-top-glow"></div>
 
     <div style="margin-bottom:18px;">
-      <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">07 / DIAGNOSTIC DIVISION</span>
+      <span class="world-section-title" style="font-size:10px;color:#79bfc4;letter-spacing:3px;">07 / DIAGNOSTIC DIVISION</span>
       <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">진단부</div>
       <div class="section-accent-line"></div>
     </div>
@@ -599,9 +650,10 @@ html,body{
 
   <!-- 08 CONTROL PROTOCOL -->
   <div style="padding:28px;">
+<div class="section-top-glow"></div>
 
     <div style="margin-bottom:18px;">
-      <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">08 / CONTROL PROTOCOL</span>
+      <span class="world-section-title" style="font-size:10px;color:#79bfc4;letter-spacing:3px;">08 / CONTROL PROTOCOL</span>
       <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">고위험 능력인 관리</div>
       <div class="section-accent-line"></div>
     </div>
@@ -705,7 +757,7 @@ html,body{
 <div style="margin-bottom:20px;">
 
   <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:12px;">
-    <div style="font-size:9px;color:#c35c65;letter-spacing:3px;">
+    <div class="red-section-title" style="font-size:9px;color:#df858d;letter-spacing:3px;">
       09 / CLASSIFIED SUBJECT FILE
     </div>
 
@@ -990,51 +1042,66 @@ html,body{
   </div>
 
 
-<div style="margin-left:18px;margin-right:18px;margin-bottom:20px;">
 
-  <div style="font-size:9px;color:#b66068;letter-spacing:2px;margin-bottom:10px;">
-    INCIDENT ARCHIVE / NEWS SCRAP
+<!-- INCIDENT ARCHIVE / NEWS SCRAP -->
+<div style="margin:26px 10px 24px;">
+
+  <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
+    <div style="font-size:9px;color:#d06a73;letter-spacing:2px;white-space:nowrap;">
+      INCIDENT ARCHIVE / NEWS SCRAP
+    </div>
+    <div style="height:1px;flex:1;background:#5d3036;"></div>
   </div>
 
-  <div style="background:#e7e2d7;color:#202326;border-radius:7px;overflow:hidden;box-shadow:0 10px 28px rgba(0,0,0,.3);">
+  <div style="background:#eee9de;color:#17191a;border:1px solid #b8b0a3;box-shadow:0 12px 28px rgba(0,0,0,.34);overflow:hidden;">
 
-
-    <div style="padding:9px 14px;background:#d3cdc1;border-bottom:1px solid #b6afa3;display:flex;justify-content:space-between;align-items:center;">
-      <b style="font-family:Georgia,'Times New Roman',serif;font-size:11px;letter-spacing:.5px;">
-        DAILY METROPOLITAN
-      </b>
-      <span style="font-size:8px;color:#666;">18세 당시 · 12월</span>
+    <!-- NEWSPAPER MASTHEAD -->
+    <div style="padding:12px 18px 9px;border-bottom:3px double #5d5a54;">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:10px;">
+        <div style="font-family:Georgia,'Times New Roman',serif;font-size:20px;font-weight:900;letter-spacing:-.4px;color:#17191a;">
+          DAILY METROPOLITAN
+        </div>
+        <div style="font-family:Georgia,'Times New Roman',serif;font-size:8px;color:#66625c;white-space:nowrap;">
+          18세 당시 · 12월
+        </div>
+      </div>
+      <div style="margin-top:5px;padding-top:5px;border-top:1px solid #aaa398;display:flex;justify-content:space-between;font-size:7px;color:#777169;letter-spacing:.5px;">
+        <span>METROPOLITAN EDITION</span>
+        <span>BREAKING NEWS</span>
+      </div>
     </div>
 
-    <div style="padding:17px 16px 15px;">
+    <!-- ARTICLE -->
+    <div style="padding:18px 18px 16px;">
 
-      <div style="font-size:9px;color:#8c252b;font-weight:900;letter-spacing:1px;margin-bottom:7px;">
+      <div style="font-size:8px;color:#8c252b;font-weight:900;letter-spacing:1.2px;margin-bottom:8px;">
         속보 / 능력인 관련 사고
       </div>
 
-      <div style="font-size:20px;font-weight:900;line-height:1.35;letter-spacing:-.8px;margin-bottom:9px;">
+      <div style="font-family:Georgia,'Times New Roman','Noto Serif KR',serif;font-size:24px;font-weight:900;line-height:1.28;letter-spacing:-1px;color:#111719;margin-bottom:9px;">
         도심서 원인불명 대형 사고<br>
         사망자 17명 확인
       </div>
 
-      <div style="font-size:9px;color:#676767;margin-bottom:11px;">
+      <div style="font-size:8px;color:#69645e;padding-bottom:11px;margin-bottom:12px;border-bottom:1px solid #aaa398;">
         국가능력관리원 사건 이관 · 현장 및 관련 기록 비공개 전환
       </div>
 
-      <div style="height:1px;background:#bbb4a8;margin-bottom:11px;"></div>
-
-      <div style="font-size:10px;line-height:1.85;color:#424242;">
-        12월 발생한 대규모 사고로 현장에 있던 17명이 사망했다.
+      <div style="font-family:Georgia,'Noto Serif KR',serif;font-size:10px;line-height:1.9;color:#343330;text-align:justify;">
+        <span style="float:left;font-family:Georgia,'Times New Roman',serif;font-size:34px;line-height:.82;font-weight:900;margin:4px 7px 0 0;color:#20211f;">1</span>2월 발생한 대규모 사고로 현장에 있던 17명이 사망했다.<br>
         관계 당국은 추가적인 위험은 없다고 밝혔으며 관련 기록은 이후 비공개 처리됐다.
       </div>
 
-      <div style="margin-top:14px;padding-top:10px;border-top:1px dashed #9e978b;font-size:8px;color:#8b3036;font-weight:800;">
-        ※ 보도 통제 이전 기사 자료 · 내부 기록용 복원본
+      <div style="clear:both;margin-top:15px;padding-top:9px;border-top:1px dashed #918a80;display:flex;align-items:center;justify-content:space-between;gap:10px;">
+        <span style="font-size:7px;color:#7b756d;">ARCHIVED PRESS MATERIAL</span>
+        <span style="font-size:8px;color:#8b3036;font-weight:800;">※ 보도 통제 이전 기사 자료 · 내부 기록용 복원본</span>
       </div>
 
     </div>
   </div>
 </div>
+
+
 
 
   <!-- INCIDENT INTERNAL RECORD -->
