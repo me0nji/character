@@ -1,582 +1,269 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+from pathlib import Path
+import re
 
-<style>
+src = Path("/mnt/data/Pasted text(6).txt")
+html = src.read_text(encoding="utf-8")
 
-  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+# 01 WORLD: 2x2 cards -> timeline / process diagram
+old = re.search(r'    <!-- 핵심 정보 -->.*?    </div>\n\n    <div style="font-size:12px;line-height:1\.9;color:#b9cbcd;">', html, re.S)
+if old:
+    new = '''    <!-- 핵심 정보 : FLOW DIAGRAM -->
+    <div style="margin-bottom:22px;padding:16px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;">
+      <div style="font-size:9px;color:#5d969d;letter-spacing:2px;margin-bottom:14px;">ABILITY LIFE CYCLE</div>
 
-body{
-  font-family:'Pretendard',sans-serif;
-  font-weight:400;
-  letter-spacing:-0.2px;
-}
-  
-html,body{
-  margin:0;
-  padding:0;
-  width:100%;
-}
-
-@media (max-width:600px){
-  body > div{
-    width:100% !important;
-    max-width:100% !important;
-    padding:16px !important;
-    margin:0 !important;
-    border-radius:0 !important;
-    box-sizing:border-box !important;
-  }
-
-  img{
-    max-width:100% !important;
-    height:auto;
-  }
-}
-</style>
-
-<div style="font-family:'Pretendard','Noto Sans KR','Apple SD Gothic Neo',sans-serif;max-width:780px;margin:0 auto;background:#071116;color:#dce8e9;border:1px solid #1c343b;border-radius:18px;overflow:hidden;box-sizing:border-box;box-shadow:0 18px 50px rgba(0,0,0,.35);">
-
-  <!-- HEADER -->
-  <div style="padding:34px 28px 28px;background:linear-gradient(135deg,#0b1c23,#0d2930);border-bottom:1px solid #24424a;">
-
-    <div style="font-size:10px;letter-spacing:4px;color:#68a8ae;margin-bottom:10px;">
-      NATIONAL ABILITY MANAGEMENT SYSTEM
-    </div>
-
-    <div style="font-size:29px;font-weight:900;letter-spacing:-1px;color:#f1f7f7;margin-bottom:7px;">
-      국가능력관리원
-    </div>
-
-    <div style="font-size:12px;color:#7f9da1;line-height:1.7;">
-      능력특별법에 의거한 능력인 보호 · 관리 · 연구 통합 기록
-    </div>
-
-    <div style="margin-top:18px;">
-      <span style="display:inline-block;padding:5px 9px;margin:2px;background:#102c33;border:1px solid #28505a;border-radius:4px;font-size:9px;color:#82c4c8;letter-spacing:1px;">CLASSIFIED</span>
-      <span style="display:inline-block;padding:5px 9px;margin:2px;background:#2c171a;border:1px solid #663238;border-radius:4px;font-size:9px;color:#df8b91;letter-spacing:1px;">AUTHORIZED PERSONNEL ONLY</span>
-    </div>
-
-  </div>
-
-
-  <!-- 01 WORLD -->
-  <div style="padding:28px;border-bottom:1px solid #172b31;">
-
-    <div style="margin-bottom:18px;">
-      <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">01 / WORLD</span>
-      <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">세계관</div>
-    </div>
-
-    <div style="height:220px;border-radius:10px;margin-bottom:22px;overflow:hidden;border:1px solid #31525a;">
-      <img src="images/NAMS1.png"
-           alt="2200년 능력인 세계관"
-           style="width:100%;height:100%;object-fit:cover;display:block;">
-    </div>
-
-    <div style="font-size:12px;line-height:1.9;color:#b9cbcd;margin-bottom:18px;">
-      2200년, 전 세계에서 기존 인간에게 존재하지 않던 특수한 능력을 가진 아이들이 태어나기 시작했다.
-      이들은 공식적으로 <b style="color:#79c1c5;">‘능력인’</b>이라 명명되었다.
-      능력인의 출생에는 확인된 유전적·환경적 공통점이 없으며 비능력인 부모 사이에서도 갑작스럽게 태어날 수 있다.
-      현재 기술로는 출생 전 능력 보유 여부를 예측할 수 없다.
-    </div>
-
-    <!-- 핵심 정보 -->
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:20px;">
-
-      <div style="padding:12px;background:#102126;border:1px solid #1d3940;border-radius:8px;">
-        <div style="font-size:9px;color:#5d969d;letter-spacing:1px;margin-bottom:5px;">POPULATION</div>
-        <b style="font-size:15px;color:#e7f2f2;">약 1%</b>
-        <div style="font-size:10px;color:#789093;margin-top:5px;line-height:1.6;">
-          발생 원인 및<br>유전 규칙 불명
+      <div style="display:flex;align-items:stretch;gap:6px;">
+        <div style="flex:1;text-align:center;padding:11px 6px;background:#10262c;border-radius:7px;">
+          <div style="font-size:9px;color:#6e969a;">01</div>
+          <b style="display:block;font-size:11px;color:#e7f2f2;margin:4px 0;">출생</b>
+          <span style="font-size:9px;color:#789093;">약 1%</span>
+        </div>
+        <div style="display:flex;align-items:center;color:#4f7e83;font-size:15px;">→</div>
+        <div style="flex:1;text-align:center;padding:11px 6px;background:#10262c;border-radius:7px;">
+          <div style="font-size:9px;color:#6e969a;">02</div>
+          <b style="display:block;font-size:11px;color:#e7f2f2;margin:4px 0;">정기 검사</b>
+          <span style="font-size:9px;color:#789093;">5년마다</span>
+        </div>
+        <div style="display:flex;align-items:center;color:#4f7e83;font-size:15px;">→</div>
+        <div style="flex:1;text-align:center;padding:11px 6px;background:#10262c;border-radius:7px;">
+          <div style="font-size:9px;color:#6e969a;">03</div>
+          <b style="display:block;font-size:11px;color:#e7f2f2;margin:4px 0;">능력 발현</b>
+          <span style="font-size:9px;color:#789093;">3~18세</span>
+        </div>
+        <div style="display:flex;align-items:center;color:#4f7e83;font-size:15px;">→</div>
+        <div style="flex:1;text-align:center;padding:11px 6px;background:#143037;border:1px solid #39717a;border-radius:7px;">
+          <div style="font-size:9px;color:#72aeb3;">04</div>
+          <b style="display:block;font-size:11px;color:#dff3f4;margin:4px 0;">국가 관리</b>
+          <span style="font-size:9px;color:#83a6a9;">교육 · 배치</span>
         </div>
       </div>
 
-      <div style="padding:12px;background:#102126;border:1px solid #1d3940;border-radius:8px;">
-        <div style="font-size:9px;color:#5d969d;letter-spacing:1px;margin-bottom:5px;">MANIFESTATION</div>
-        <b style="font-size:15px;color:#e7f2f2;">유년기~청소년기</b>
-        <div style="font-size:10px;color:#789093;margin-top:5px;line-height:1.6;">
-          발현 나이<br>만 3살 이상, 18살 이하
+      <div style="margin-top:11px;font-size:9px;line-height:1.7;color:#66878a;text-align:center;">
+        발생 원인 · 유전 규칙 불명 / 출생 전 예측 불가
+      </div>
+    </div>
+
+    <div style="font-size:12px;line-height:1.9;color:#b9cbcd;">'''
+    html = html[:old.start()] + new + html[old.end():]
+
+# 02 rank cards -> vertical rank ladder
+start = html.find('    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:7px;">', html.find('<!-- 02 CLASSIFICATION -->'))
+end_marker = '    <div style="margin-top:18px;padding:12px 14px;background:#0c1c21'
+end = html.find(end_marker, start)
+if start != -1 and end != -1:
+    new = '''    <!-- 등급 다이어그램 -->
+    <div style="padding:15px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;">
+      <div style="font-size:9px;color:#5d969d;letter-spacing:2px;margin-bottom:13px;">ABILITY CLASSIFICATION SCALE</div>
+
+      <div style="display:flex;align-items:center;gap:5px;margin-bottom:10px;">
+        <div style="flex:1;height:7px;background:#30464a;border-radius:10px;"></div>
+        <div style="flex:1;height:7px;background:#35666a;border-radius:10px;"></div>
+        <div style="flex:1;height:7px;background:#3b8588;border-radius:10px;"></div>
+        <div style="flex:1;height:7px;background:#45a8aa;border-radius:10px;"></div>
+        <div style="flex:1;height:7px;background:#b0676d;border-radius:10px;"></div>
+        <div style="flex:1;height:7px;background:#dc737b;border-radius:10px;"></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:52px 1fr;gap:0;">
+        <div style="padding:9px 0;border-bottom:1px solid #1d3940;font-size:14px;font-weight:800;color:#8ca4a6;">E · D</div>
+        <div style="padding:9px 0;border-bottom:1px solid #1d3940;font-size:10px;color:#789093;">저위험군 → 일반 사회생활 가능</div>
+
+        <div style="padding:9px 0;border-bottom:1px solid #1d3940;font-size:14px;font-weight:800;color:#79b7ba;">C</div>
+        <div style="padding:9px 0;border-bottom:1px solid #1d3940;font-size:10px;color:#789093;">정식 국가 능력인 → 전문 업무 배치</div>
+
+        <div style="padding:9px 0;border-bottom:1px solid #1d3940;font-size:14px;font-weight:800;color:#6fc6c8;">B</div>
+        <div style="padding:9px 0;border-bottom:1px solid #1d3940;font-size:10px;color:#789093;">국가 핵심 전문인력 → 활동 일부 제한</div>
+
+        <div style="padding:9px 0;border-bottom:1px solid #1d3940;font-size:14px;font-weight:800;color:#5fd6d8;">A</div>
+        <div style="padding:9px 0;border-bottom:1px solid #1d3940;font-size:10px;color:#9bb0b2;">국가 전략자산 → 직접 관리 대상</div>
+
+        <div style="padding:9px 0;border-bottom:1px solid #1d3940;font-size:14px;font-weight:800;color:#e3eeee;">S · S+</div>
+        <div style="padding:9px 0;border-bottom:1px solid #1d3940;font-size:10px;color:#b3c2c4;">최상위 능력인 → 국가안보 관리 대상</div>
+
+        <div style="padding:9px 0;font-size:14px;font-weight:900;color:#ee9299;">S++</div>
+        <div style="padding:9px 0;font-size:10px;color:#d18a90;">측정 한계 초과 → 특별관리대상</div>
+      </div>
+    </div>
+
+'''
+    html = html[:start] + new + html[end:]
+
+# 03 restrictions table -> importance gauges
+start = html.find('    <div style="border:1px solid #1d3940;border-radius:9px;overflow:hidden;">', html.find('<!-- 03 RESTRICTIONS -->'))
+end = html.find('    <div style="margin-top:16px;font-size:11px;line-height:1.85;color:#829da0;">', start)
+if start != -1 and end != -1:
+    new = '''    <!-- 제한 강도 게이지 -->
+    <div style="padding:15px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;">
+      <div style="font-size:9px;color:#5d969d;letter-spacing:2px;margin-bottom:14px;">RESTRICTION LEVEL</div>
+
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <b style="font-size:10px;color:#b9cbcd;">외출 제한</b>
+          <span style="font-size:9px;color:#79c1c5;">★★★☆☆ · 중간</span>
         </div>
+        <div style="height:6px;background:#14272c;border-radius:10px;overflow:hidden;"><div style="width:60%;height:100%;background:#5ca5aa;"></div></div>
+        <div style="font-size:9px;color:#718b8e;margin-top:5px;">고등급 허가제 · 동선 제출 · 필요 시 관리요원 동행</div>
       </div>
 
-      <div style="padding:12px;background:#102126;border:1px solid #1d3940;border-radius:8px;">
-        <div style="font-size:9px;color:#5d969d;letter-spacing:1px;margin-bottom:5px;">SCREENING</div>
-        <b style="font-size:15px;color:#e7f2f2;">5년마다 검사</b>
-        <div style="font-size:10px;color:#789093;margin-top:5px;line-height:1.6;">
-          출생 후부터<br>만 20세까지
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <b style="font-size:10px;color:#b9cbcd;">법적 혼인</b>
+          <span style="font-size:9px;color:#d58a90;">★★★★★ · 매우 높음</span>
         </div>
+        <div style="height:6px;background:#14272c;border-radius:10px;overflow:hidden;"><div style="width:100%;height:100%;background:#b75f67;"></div></div>
+        <div style="font-size:9px;color:#8f777a;margin-top:5px;">A급 이상 원칙적 금지</div>
       </div>
 
-      <div style="padding:12px;background:#102126;border:1px solid #1d3940;border-radius:8px;">
-        <div style="font-size:9px;color:#5d969d;letter-spacing:1px;margin-bottom:5px;">MANAGEMENT</div>
-        <b style="font-size:15px;color:#e7f2f2;">국가관리</b>
-        <div style="font-size:10px;color:#789093;margin-top:5px;line-height:1.6;">
-          미성년 교육 · 보호<br>고등급 국가 소속
+      <div style="margin-bottom:14px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <b style="font-size:10px;color:#b9cbcd;">연애 · 성관계</b>
+          <span style="font-size:9px;color:#79c1c5;">★☆☆☆☆ · 낮음</span>
         </div>
-      </div>
-
-    </div>
-
-    <div style="font-size:12px;line-height:1.9;color:#b9cbcd;">
-      초기 정부는 능력인의 인권을 보장하며 일반 사회와 공존하는 방향을 모색했다.
-      그러나 능력을 제어하지 못한 능력인에 의한 인명피해가 반복되면서 여론이 악화되었고,
-      정부는 <b style="color:#79c1c5;">「능력특별법」</b>을 제정했다.
-    </div>
-
-    <div style="margin-top:14px;font-size:11px;line-height:1.85;color:#91a7a9;">
-      2200년 이후 출생한 모든 국민은 만 20세까지 5년마다 능력발현점검센터에서 검사를 받아야 한다.
-      보호자가 검사를 거부하거나 능력인 자녀를 고의로 은닉할 경우
-      <b style="color:#d58a90;">양육권이 국가로 이전될 수 있다.</b>
-      능력이 확인된 미성년자는 국가관리시설에서 일반교육과 능력 제어 교육을 받으며,
-      일정 등급 이상은 성인이 된 이후에도 국가기관에 소속된다.
-    </div>
-
-    <div style="margin-top:18px;padding:14px 16px;background:#0b1c21;border-left:3px solid #5daab0;border-radius:0 8px 8px 0;font-size:11px;line-height:1.8;color:#91adb0;">
-      국가 업무 수행의 대가로 높은 급여와 주거 · 의료 · 식사 · 여가 등 생활 지원이 제공된다.<br>
-      <b style="color:#d58a90;">단, 등급이 높을수록 개인의 자유는 줄어든다.</b>
-    </div>
-
-  </div>
-
-
-  <!-- 02 CLASSIFICATION -->
-  <div style="padding:28px;background:#09151a;border-bottom:1px solid #172b31;">
-
-    <div style="margin-bottom:18px;">
-      <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">02 / CLASSIFICATION</span>
-      <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">능력 등급</div>
-    </div>
-
-    <div style="height:190px;border:1px solid #31525a;border-radius:10px;margin-bottom:22px;overflow:hidden;">
-      <img src="images/NAMS2.png"
-           alt="능력 등급 분류"
-           style="width:100%;height:100%;object-fit:cover;display:block;">
-    </div>
-
-    <div style="font-size:12px;line-height:1.9;color:#b9cbcd;margin-bottom:18px;">
-      모든 능력인은 최초 등록 후 정밀검사를 거쳐
-      <b style="color:#79c1c5;">능력 등급</b>과
-      <b style="color:#d58a90;">위험 등급</b>을 각각 부여받는다.
-      능력 등급은 단순한 파괴력뿐 아니라 실제 활용성과 능력을 안정적으로 다룰 수 있는지까지 종합하여 결정된다.
-    </div>
-
-    <div style="font-size:10px;color:#718d91;margin-bottom:12px;line-height:1.7;">
-      평가 기준 · 출력 / 범위 / 희소성 / 활용도 / 제어력 / 성장 가능성
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:7px;">
-
-      <div style="background:#102126;border:1px solid #1d3940;border-radius:8px;padding:12px;">
-        <b style="font-size:17px;color:#8ca4a6;">E · D</b>
-        <div style="font-size:10px;color:#789093;margin-top:4px;line-height:1.6;">저위험군<br>일반 사회생활 가능</div>
-      </div>
-
-      <div style="background:#102126;border:1px solid #1d3940;border-radius:8px;padding:12px;">
-        <b style="font-size:17px;color:#79b7ba;">C</b>
-        <div style="font-size:10px;color:#789093;margin-top:4px;line-height:1.6;">정식 국가 능력인<br>전문 업무 배치</div>
-      </div>
-
-      <div style="background:#102126;border:1px solid #1d3940;border-radius:8px;padding:12px;">
-        <b style="font-size:17px;color:#6fc6c8;">B</b>
-        <div style="font-size:10px;color:#789093;margin-top:4px;line-height:1.6;">국가 핵심 전문인력<br>활동 일부 제한</div>
-      </div>
-
-      <div style="background:#102126;border:1px solid #1d3940;border-radius:8px;padding:12px;">
-        <b style="font-size:17px;color:#5fd6d8;">A</b>
-        <div style="font-size:10px;color:#789093;margin-top:4px;line-height:1.6;">국가 전략자산<br>직접 관리 대상</div>
-      </div>
-
-      <div style="background:#162126;border:1px solid #37535a;border-radius:8px;padding:12px;">
-        <b style="font-size:17px;color:#e3eeee;">S · S+</b>
-        <div style="font-size:10px;color:#91a6a8;margin-top:4px;line-height:1.6;">최상위 능력인<br>국가안보 관리 대상</div>
-      </div>
-
-      <div style="background:#291518;border:1px solid #71373d;border-radius:8px;padding:12px;">
-        <b style="font-size:17px;color:#ee9299;">S++</b>
-        <div style="font-size:10px;color:#bc777c;margin-top:4px;line-height:1.6;">측정 한계 초과<br>특별관리대상</div>
-      </div>
-
-    </div>
-
-    <div style="margin-top:18px;padding:12px 14px;background:#0c1c21;border-radius:7px;font-size:10px;line-height:1.8;color:#829da0;">
-      <b style="color:#d58a90;">위험 등급</b>은 능력인이 통제력을 잃거나 의도적으로 능력을 사용했을 때
-      예상되는 피해 규모와 국가의 통제 가능성을 의미한다.
-      강력한 능력을 가졌더라도 안정적으로 제어한다면 위험도가 낮을 수 있어 능력 등급과 반드시 일치하지 않는다.
-    </div>
-
-  </div>
-
-
-  <!-- 03 RESTRICTIONS -->
-  <div style="padding:28px;border-bottom:1px solid #172b31;">
-
-    <div style="margin-bottom:18px;">
-      <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">03 / RESTRICTIONS</span>
-      <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">능력인들의 제한</div>
-    </div>
-
-    <div style="height:220px;border-radius:10px;margin-bottom:22px;overflow:hidden;border:1px solid #31525a;">
-      <img src="images/NAMS3.png"
-           alt="능력인들의 제한"
-           style="width:100%;height:100%;object-fit:cover;display:block;">
-    </div>
-
-    <div style="font-size:12px;line-height:1.9;color:#b9cbcd;margin-bottom:18px;">
-      능력인은 등급이 높아질수록 더 많은 급여와 특혜를 받는 대신,
-      <b style="color:#d58a90;">국가가 개인의 생활에 개입할 수 있는 범위도 넓어진다.</b>
-      특히 고등급 능력인은 사적인 활동조차 위험관리의 일부로 취급된다.
-    </div>
-
-    <div style="border:1px solid #1d3940;border-radius:9px;overflow:hidden;">
-
-      <div style="display:grid;grid-template-columns:90px 1fr;padding:11px 13px;background:#102126;border-bottom:1px solid #1d3940;">
-        <b style="font-size:10px;color:#79c1c5;">외출</b>
-        <span style="font-size:10px;color:#9bb0b2;">고등급 허가제 · 목적 및 동선 제출 · 필요 시 관리요원 동행</span>
-      </div>
-
-      <div style="display:grid;grid-template-columns:90px 1fr;padding:11px 13px;background:#0d1c21;border-bottom:1px solid #1d3940;">
-        <b style="font-size:10px;color:#79c1c5;">법적 혼인</b>
-        <span style="font-size:10px;color:#d9e4e5;">A급 이상 원칙적 금지</span>
-      </div>
-
-      <div style="display:grid;grid-template-columns:90px 1fr;padding:11px 13px;background:#102126;border-bottom:1px solid #1d3940;">
-        <b style="font-size:10px;color:#79c1c5;">연애 · 성관계</b>
-        <span style="font-size:10px;color:#9bb0b2;">원칙적으로 허용</span>
-      </div>
-
-      <div style="display:grid;grid-template-columns:90px 1fr;padding:11px 13px;background:#0d1c21;">
-        <b style="font-size:10px;color:#d58a90;">국가 개입</b>
-        <span style="font-size:10px;color:#c9979b;">특정 개인이 판단이나 임무 수행에 영향을 미칠 경우</span>
-      </div>
-
-    </div>
-
-    <div style="margin-top:16px;font-size:11px;line-height:1.85;color:#829da0;">
-      연애나 성관계 자체가 일률적으로 금지되는 것은 아니다.
-      다만 특정 상대에 대한 강한 애착이 능력인의 판단이나 임무 수행에 영향을 미칠 정도로 발전하면
-      국가는 해당 관계를 관리상 위험요소로 판단하고 개입할 수 있다.
-      A급 이상의 법적 혼인이 제한되는 것도 이러한 이유에서다.
-    </div>
-
-    <div style="margin-top:14px;padding:13px 15px;background:#211417;border-left:3px solid #9d5057;border-radius:0 7px 7px 0;font-size:11px;line-height:1.7;color:#c98d92;">
-      <b>주요 위험요소</b><br>
-      국가의 지시보다 우선하는 특정 개인이 존재하는 상태
-    </div>
-
-  </div>
-
-
-  <!-- 04 S++ -->
-  <div style="padding:28px;background:#160e11;border-top:1px solid #512a30;border-bottom:1px solid #512a30;">
-
-    <div style="margin-bottom:18px;">
-      <span style="font-size:10px;color:#b66068;letter-spacing:3px;">04 / EXTREME RISK</span>
-      <div style="font-size:22px;font-weight:900;color:#f0dfe1;margin-top:5px;">S++ 특별관리대상</div>
-    </div>
-
-    <div style="height:220px;border:1px solid #71383e;border-radius:10px;margin-bottom:18px;overflow:hidden;">
-      <img src="images/NAMS4.png"
-           alt="S++ 특별관리대상"
-           style="width:100%;height:100%;object-fit:cover;display:block;">
-    </div>
-
-    <div style="padding:10px 13px;margin-bottom:18px;border:1px solid #71383e;background:#251317;border-radius:7px;color:#e18a92;font-size:9px;letter-spacing:1px;">
-      WARNING · EXTREME RISK SUBJECT
-    </div>
-
-    <div style="font-size:12px;line-height:1.9;color:#cdb6b9;margin-bottom:18px;">
-      위험등급 S++는 일반적인 능력인 관리규정으로 통제할 수 없다고 판단된 최상위 위험군으로,
-      별도의 <b style="color:#ed9ca2;">특별관리대상</b>으로 분류된다.
-      일반 고위험 능력인과 달리 관리 해제를 전제로 하지 않는다.
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:18px;">
-
-      <div style="padding:11px 8px;text-align:center;background:#251317;border:1px solid #512a30;border-radius:7px;">
-        <div style="font-size:9px;color:#a9666c;margin-bottom:5px;">RESIDENCE</div>
-        <b style="font-size:11px;color:#e7c6c9;">독립 격리</b>
-      </div>
-
-      <div style="padding:11px 8px;text-align:center;background:#251317;border:1px solid #512a30;border-radius:7px;">
-        <div style="font-size:9px;color:#a9666c;margin-bottom:5px;">CONTACT</div>
-        <b style="font-size:11px;color:#e7c6c9;">민간 접촉 제한</b>
-      </div>
-
-      <div style="padding:11px 8px;text-align:center;background:#251317;border:1px solid #512a30;border-radius:7px;">
-        <div style="font-size:9px;color:#a9666c;margin-bottom:5px;">FORCE</div>
-        <b style="font-size:11px;color:#e7c6c9;">제압 곤란</b>
-      </div>
-
-    </div>
-
-    <div style="font-size:11px;line-height:1.9;color:#bda5a8;">
-      S++ 대상자는 독립된 특수관리시설에서 생활하며 외출과 민간인 접촉이 극도로 제한된다.
-      사실상 <b style="color:#f0dfe1;">평생에 가까운 격리생활</b>을 하게 된다.
-      그러나 이들은 물리적으로 제압하거나 강제로 구속하는 것 자체가 불가능한 경우가 많다.
-
-      <div style="margin-top:12px;">
-        때문에 국가는 무력으로 복종시키기보다
-        <b style="color:#f0dfe1;">대상자가 스스로 시설의 규칙을 따르도록 만드는 통제방식</b>을 우선한다.
-        저항하지 않을 이유를 제공하거나 대상자가 잃고 싶지 않은 것을 통제수단으로 이용하는 방식이다.
-      </div>
-    </div>
-
-    <div style="margin-top:18px;padding:15px;background:#2a1317;border:1px solid #7a343c;border-radius:8px;">
-
-      <div style="font-size:9px;color:#d06770;letter-spacing:2px;margin-bottom:7px;">CONTROL METHOD</div>
-
-      <div style="font-size:12px;font-weight:700;color:#ee9ba2;margin-bottom:7px;">
-        가족을 이용한 통제
-      </div>
-
-      <div style="font-size:10px;line-height:1.8;color:#b98287;">
-        가족이 존재하는 경우 국가는 가족을 별도로 관리하며 그 생사와 소재를 대상자에게 공개하지 않을 수 있다.
-        대상자는 가족이 이미 사망했을 가능성을 알고 있더라도
-        <b style="color:#e29aa0;">살아 있을 가능성을 포기할 수 없기 때문에 쉽게 국가에 저항하지 못한다.</b>
-        가족이 없거나 애착이 없는 경우에는 과거, 성향, 욕구와 두려움을 분석해 별도의 통제수단을 마련한다.
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- 05 CIVILIAN -->
-  <div style="padding:28px;border-bottom:1px solid #172b31;">
-
-    <div style="margin-bottom:18px;">
-      <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">05 / CIVILIAN</span>
-      <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">비능력인</div>
-    </div>
-
-    <!-- IMAGE : 비능력인 -->
-    <div style="height:190px;border:1px solid #31525a;border-radius:10px;margin-bottom:22px;overflow:hidden;">
-      <img src="images/NAMS5.png"
-           alt="비능력인 사회"
-           style="width:100%;height:100%;object-fit:cover;display:block;">
-    </div>
-
-    <div style="display:flex;align-items:center;gap:15px;padding:15px;background:#102126;border:1px solid #1d3940;border-radius:8px;margin-bottom:18px;">
-
-      <div style="font-size:27px;font-weight:900;color:#e7f2f2;">
-        99%
+        <div style="height:6px;background:#14272c;border-radius:10px;overflow:hidden;"><div style="width:20%;height:100%;background:#5ca5aa;"></div></div>
+        <div style="font-size:9px;color:#718b8e;margin-top:5px;">원칙적으로 허용 · 관계의 영향력이 커질 경우 감시 강화</div>
       </div>
 
       <div>
-        <div style="font-size:11px;font-weight:700;color:#b9cbcd;">비능력인</div>
-        <div style="font-size:9px;color:#718b8e;margin-top:3px;">특수능력을 가지지 않은 일반 인간</div>
-      </div>
-
-    </div>
-
-    <div style="font-size:10px;color:#5d969d;letter-spacing:2px;margin-bottom:9px;">
-      SOCIAL PERCEPTION
-    </div>
-
-    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;">
-      <span style="padding:6px 10px;background:#102a2f;border-radius:20px;font-size:10px;color:#8ebec1;">존경</span>
-      <span style="padding:6px 10px;background:#102a2f;border-radius:20px;font-size:10px;color:#8ebec1;">선망</span>
-      <span style="padding:6px 10px;background:#28181b;border-radius:20px;font-size:10px;color:#c9898e;">공포</span>
-      <span style="padding:6px 10px;background:#28181b;border-radius:20px;font-size:10px;color:#c9898e;">혐오</span>
-    </div>
-
-    <div style="font-size:11px;line-height:1.85;color:#9db1b3;margin-bottom:16px;">
-      능력인을 바라보는 사회의 시선은 극단적으로 갈린다.
-      국가를 대신해 위험한 업무를 수행한다는 점에서는 존경받지만,
-      일반인은 받기 어려운 높은 급여와 각종 특혜 때문에 선망과 반감을 동시에 산다.
-      능력 사고에 대한 공포로 능력인 자체를 잠재적인 위험요소로 보는 사람들도 적지 않다.
-    </div>
-
-    <div style="font-size:11px;line-height:1.85;color:#9db1b3;">
-      능력인을 숨기거나 능력발현검사를 고의로 회피하도록 돕는 행위는
-      <b style="color:#dce8e9;">중범죄</b>다.
-      미등록 능력인을 신고해 적발에 기여한 사람에게는 포상금이 지급된다.
-    </div>
-
-    <div style="margin-top:16px;padding:13px 15px;background:#0d2025;border-radius:7px;font-size:10px;line-height:1.8;color:#819da0;">
-      <b style="color:#b8cdcf;">비능력자 양육센터</b><br>
-      능력이 없는 아이라도 보호자가 능력특별법 위반으로 양육권을 박탈당했거나
-      신원을 확인할 수 없는 경우 국가 보호 대상이 된다.
-      일정 연령까지 비능력자 양육센터에서 생활한 뒤 일반 사회로 진출한다.
-    </div>
-
-  </div>
-
-
-  <!-- 06 ORGANIZATION -->
-  <div style="padding:28px;background:#09151a;border-bottom:1px solid #172b31;">
-
-    <div style="margin-bottom:18px;">
-      <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">06 / ORGANIZATION</span>
-      <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">국가능력관리원</div>
-    </div>
-
-    <!-- IMAGE : 국가능력관리원 -->
-    <div style="height:210px;border:1px solid #31525a;border-radius:10px;margin-bottom:22px;overflow:hidden;">
-      <img src="images/NAMS6.png"
-           alt="국가능력관리원"
-           style="width:100%;height:100%;object-fit:cover;display:block;">
-    </div>
-
-    <div style="font-size:12px;line-height:1.9;color:#b9cbcd;margin-bottom:18px;">
-      능력인의 <b style="color:#79c1c5;">등록 · 교육 · 배치 · 연구 · 관리</b>를 담당하는 중앙정부기관이다.
-      단순한 행정기관이 아니라 능력인의 교육, 취업, 거주와 임무 등 생애 전반에 관여하며,
-      능력인 관련 사건에서는 일반 수사기관보다 높은 수준의 권한을 가진다.
-    </div>
-
-    <div style="font-size:9px;color:#5d969d;letter-spacing:2px;margin-bottom:9px;">
-      DIVISIONS
-    </div>
-
-    <div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px;">
-      <span style="padding:6px 9px;background:#10262c;border:1px solid #1f4149;border-radius:5px;font-size:10px;color:#9ab7ba;">교육부</span>
-      <span style="padding:6px 9px;background:#10262c;border:1px solid #1f4149;border-radius:5px;font-size:10px;color:#9ab7ba;">연구부</span>
-      <span style="padding:6px 9px;background:#10262c;border:1px solid #1f4149;border-radius:5px;font-size:10px;color:#9ab7ba;">작전부</span>
-      <span style="padding:6px 9px;background:#10262c;border:1px solid #1f4149;border-radius:5px;font-size:10px;color:#9ab7ba;">의료부</span>
-      <span style="padding:6px 9px;background:#10262c;border:1px solid #1f4149;border-radius:5px;font-size:10px;color:#9ab7ba;">보안부</span>
-      <span style="padding:6px 9px;background:#143037;border:1px solid #39717a;border-radius:5px;font-size:10px;color:#83c9cd;">진단부</span>
-    </div>
-
-    <div style="font-size:11px;line-height:1.85;color:#819da0;">
-      관리원은 능력인의 등급과 위험도를 정기적으로 재평가한다.
-      평가 결과에 따라 거주환경, 활동범위, 담당 임무와 관리수준이 변경될 수 있다.
-      시설 내부에는 인공지능 행정 시스템이 구축되어 있으며
-      직원마다 부여된 보안등급에 따라 접근 가능한 정보가 달라진다.
-    </div>
-
-  </div>
-
-
-  <!-- 07 DIAGNOSTIC -->
-  <div style="padding:28px;border-bottom:1px solid #172b31;">
-
-    <div style="margin-bottom:18px;">
-      <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">07 / DIAGNOSTIC DIVISION</span>
-      <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">진단부</div>
-    </div>
-
-    <!-- IMAGE : 진단부 -->
-    <div style="height:220px;border:1px solid #31525a;border-radius:10px;margin-bottom:22px;overflow:hidden;">
-      <img src="images/NAMS7.png"
-           alt="진단부"
-           style="width:100%;height:100%;object-fit:cover;display:block;">
-    </div>
-
-    <div style="font-size:12px;line-height:1.9;color:#b9cbcd;margin-bottom:18px;">
-      진단부는 능력인의
-      <b style="color:#79c1c5;">정신상태 · 스트레스 · 공격성 · 사회성 · 충동조절 · 인간관계</b>와
-      능력 안정성 사이의 관계를 지속적으로 관찰하는 부서다.
-    </div>
-
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:20px;">
-
-      <div style="padding:12px;background:#102126;border-radius:7px;">
-        <div style="font-size:9px;color:#5d969d;margin-bottom:5px;">OBSERVE</div>
-        <b style="font-size:11px;color:#dce8e9;">관찰</b>
-        <div style="font-size:9px;color:#789093;margin-top:4px;line-height:1.6;">스트레스 · 공격성<br>충동 · 사회성</div>
-      </div>
-
-      <div style="padding:12px;background:#102126;border-radius:7px;">
-        <div style="font-size:9px;color:#5d969d;margin-bottom:5px;">INTERACT</div>
-        <b style="font-size:11px;color:#dce8e9;">상호작용</b>
-        <div style="font-size:9px;color:#789093;margin-top:4px;line-height:1.6;">대화 · 식사<br>게임 · 산책</div>
-      </div>
-
-      <div style="padding:12px;background:#102126;border-radius:7px;">
-        <div style="font-size:9px;color:#5d969d;margin-bottom:5px;">RECORD</div>
-        <b style="font-size:11px;color:#dce8e9;">기록</b>
-        <div style="font-size:9px;color:#789093;margin-top:4px;line-height:1.6;">행동 · 감정 변화<br>대화 · 과거</div>
-      </div>
-
-      <div style="padding:12px;background:#102126;border-radius:7px;">
-        <div style="font-size:9px;color:#5d969d;margin-bottom:5px;">REPORT</div>
-        <b style="font-size:11px;color:#dce8e9;">보고</b>
-        <div style="font-size:9px;color:#789093;margin-top:4px;line-height:1.6;">접촉 종료 후<br>일일 진단보고서</div>
-      </div>
-
-    </div>
-
-    <div style="font-size:11px;line-height:1.9;color:#91a7a9;">
-      진단부 소속 일반 직원을 <b style="color:#dce8e9;">진단인</b>이라 한다.
-      진단인은 의료진처럼 정식 진료를 진행하기보다 대상자와 직접 시간을 보내며
-      자연스러운 상호작용 속에서 행동과 심리 변화를 관찰한다.
-
-      <div style="margin-top:12px;">
-        대화 · 식사 · 게임 · 산책 같은 일상적인 활동을 함께하며 직접적인 심문은 가급적 피한다.
-        대신 대상자가 스스로 자신의 과거, 능력에 대한 인식, 국가에 대한 생각,
-        두려움이나 욕구를 이야기하도록 유도한다.
-        접촉 종료 후에는 스트레스 수준, 공격행동, 감정 변화와 대화 내용 등을
-        <b style="color:#dce8e9;">일일 진단보고서</b>에 객관적으로 기록한다.
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+          <b style="font-size:10px;color:#d58a90;">국가 개입</b>
+          <span style="font-size:9px;color:#e28e95;">★★★★☆ · 높음</span>
+        </div>
+        <div style="height:6px;background:#14272c;border-radius:10px;overflow:hidden;"><div style="width:80%;height:100%;background:#c56870;"></div></div>
+        <div style="font-size:9px;color:#9e7d80;margin-top:5px;">특정 개인이 판단 · 임무 수행 · 국가 지시에 영향을 미칠 경우</div>
       </div>
     </div>
 
-    <!-- 정서안정접촉 -->
-    <div style="margin-top:20px;padding:16px;background:#0d2228;border:1px solid #24454d;border-radius:8px;">
+'''
+    html = html[:start] + new + html[end:]
 
-      <div style="font-size:9px;color:#5f969c;letter-spacing:2px;margin-bottom:8px;">
-        EMOTIONAL STABILIZATION CONTACT
+# 04 three cards -> containment flow diagram
+start = html.find('    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:18px;">', html.find('<!-- 04 S++ -->'))
+end = html.find('    <div style="font-size:11px;line-height:1.9;color:#bda5a8;">', start)
+if start != -1 and end != -1:
+    new = '''    <!-- S++ 관리 구조 다이어그램 -->
+    <div style="padding:14px;background:#211216;border:1px solid #512a30;border-radius:9px;margin-bottom:18px;">
+      <div style="font-size:9px;color:#a9666c;letter-spacing:2px;margin-bottom:12px;">CONTAINMENT STRUCTURE</div>
+      <div style="display:flex;align-items:center;gap:6px;text-align:center;">
+        <div style="flex:1;padding:10px 5px;background:#2a1519;border-radius:7px;">
+          <b style="font-size:10px;color:#e7c6c9;">독립 격리</b>
+          <div style="font-size:8px;color:#9f6c71;margin-top:4px;">RESIDENCE</div>
+        </div>
+        <div style="color:#9f555d;">→</div>
+        <div style="flex:1;padding:10px 5px;background:#2a1519;border-radius:7px;">
+          <b style="font-size:10px;color:#e7c6c9;">접촉 제한</b>
+          <div style="font-size:8px;color:#9f6c71;margin-top:4px;">CONTACT</div>
+        </div>
+        <div style="color:#9f555d;">→</div>
+        <div style="flex:1;padding:10px 5px;background:#35171c;border:1px solid #71383e;border-radius:7px;">
+          <b style="font-size:10px;color:#ee9ba2;">비물리 통제</b>
+          <div style="font-size:8px;color:#b66c73;margin-top:4px;">CONTROL</div>
+        </div>
       </div>
-
-      <div style="font-size:14px;color:#dce9ea;font-weight:700;margin-bottom:7px;">
-        정서안정접촉
-      </div>
-
-      <div style="font-size:10px;color:#819da0;line-height:1.8;">
-        장기간 격리된 고위험 능력인의 스트레스 관리와 사회성 유지를 위해
-        특정 진단인을 전담 배정하는 제도다.
-        대상자의 나이 · 성별 · 성향 등을 고려하며 필요에 따라 비슷한 연령대의 이성이 배정되기도 한다.
-        지속적인 관계 속에서 형성되는
-        <b style="color:#a9c4c6;">경계심 · 신뢰 · 애착 · 공격성 · 보호행동</b> 역시 주요 관찰 대상이다.
-      </div>
-
-      <div style="margin-top:11px;padding-top:10px;border-top:1px solid #24454d;font-size:9px;color:#65959a;">
-        스트레스 완화 · 사회성 유지 · 행동 관찰 · 심리정보 수집
-      </div>
-
     </div>
 
-  </div>
+'''
+    html = html[:start] + new + html[end:]
 
+# 06 division chips -> org diagram
+start = html.find('    <div style="font-size:9px;color:#5d969d;letter-spacing:2px;margin-bottom:9px;">\n      DIVISIONS', html.find('<!-- 06 ORGANIZATION -->'))
+end = html.find('    <div style="font-size:11px;line-height:1.85;color:#819da0;">', start)
+if start != -1 and end != -1:
+    new = '''    <!-- 조직 다이어그램 -->
+    <div style="font-size:9px;color:#5d969d;letter-spacing:2px;margin-bottom:10px;">ORGANIZATION MAP</div>
 
-  <!-- 08 CONTROL PROTOCOL -->
-  <div style="padding:28px;">
+    <div style="padding:15px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;margin-bottom:18px;text-align:center;">
+      <div style="display:inline-block;padding:9px 18px;background:#143037;border:1px solid #39717a;border-radius:7px;font-size:11px;font-weight:700;color:#dce9ea;">
+        국가능력관리원
+      </div>
+      <div style="width:1px;height:13px;background:#31545c;margin:0 auto;"></div>
+      <div style="height:1px;background:#31545c;margin:0 8%;"></div>
 
-    <div style="margin-bottom:18px;">
-      <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">08 / CONTROL PROTOCOL</span>
-      <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">고위험 능력인 관리</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin-top:0;">
+        <div style="padding:9px 4px;background:#10262c;border-radius:6px;font-size:9px;color:#9ab7ba;">교육부</div>
+        <div style="padding:9px 4px;background:#10262c;border-radius:6px;font-size:9px;color:#9ab7ba;">연구부</div>
+        <div style="padding:9px 4px;background:#10262c;border-radius:6px;font-size:9px;color:#9ab7ba;">작전부</div>
+        <div style="padding:9px 4px;background:#10262c;border-radius:6px;font-size:9px;color:#9ab7ba;">의료부</div>
+        <div style="padding:9px 4px;background:#10262c;border-radius:6px;font-size:9px;color:#9ab7ba;">보안부</div>
+        <div style="padding:9px 4px;background:#17343b;border:1px solid #39717a;border-radius:6px;font-size:9px;color:#83c9cd;">진단부</div>
+      </div>
     </div>
 
-    <!-- IMAGE : 고위험 능력인 관리 -->
-    <div style="height:220px;border:1px solid #31525a;border-radius:10px;margin-bottom:22px;overflow:hidden;">
-      <img src="images/NAMS8.png"
-           alt="고위험 능력인 관리시설"
-           style="width:100%;height:100%;object-fit:cover;display:block;">
+'''
+    html = html[:start] + new + html[end:]
+
+# 07 four cards -> process diagram
+start = html.find('    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:20px;">', html.find('<!-- 07 DIAGNOSTIC -->'))
+end = html.find('    <div style="font-size:11px;line-height:1.9;color:#91a7a9;">', start)
+if start != -1 and end != -1:
+    new = '''    <!-- 진단 프로세스 다이어그램 -->
+    <div style="padding:15px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;margin-bottom:20px;">
+      <div style="font-size:9px;color:#5d969d;letter-spacing:2px;margin-bottom:13px;">DIAGNOSTIC PROCESS</div>
+      <div style="display:flex;align-items:center;gap:5px;text-align:center;">
+        <div style="flex:1;padding:10px 4px;background:#10262c;border-radius:7px;">
+          <div style="font-size:8px;color:#5d969d;">01</div>
+          <b style="font-size:10px;color:#dce8e9;">관찰</b>
+          <div style="font-size:8px;color:#789093;margin-top:4px;">스트레스 · 공격성</div>
+        </div>
+        <div style="color:#4f7e83;">→</div>
+        <div style="flex:1;padding:10px 4px;background:#10262c;border-radius:7px;">
+          <div style="font-size:8px;color:#5d969d;">02</div>
+          <b style="font-size:10px;color:#dce8e9;">상호작용</b>
+          <div style="font-size:8px;color:#789093;margin-top:4px;">대화 · 식사 · 게임</div>
+        </div>
+        <div style="color:#4f7e83;">→</div>
+        <div style="flex:1;padding:10px 4px;background:#10262c;border-radius:7px;">
+          <div style="font-size:8px;color:#5d969d;">03</div>
+          <b style="font-size:10px;color:#dce8e9;">기록</b>
+          <div style="font-size:8px;color:#789093;margin-top:4px;">행동 · 감정 변화</div>
+        </div>
+        <div style="color:#4f7e83;">→</div>
+        <div style="flex:1;padding:10px 4px;background:#143037;border:1px solid #39717a;border-radius:7px;">
+          <div style="font-size:8px;color:#72aeb3;">04</div>
+          <b style="font-size:10px;color:#dff3f4;">보고</b>
+          <div style="font-size:8px;color:#83a6a9;margin-top:4px;">일일 진단보고서</div>
+        </div>
+      </div>
     </div>
 
-    <div style="font-size:12px;line-height:1.9;color:#b9cbcd;margin-bottom:18px;">
-      고위험 능력인에게는
-      <b style="color:#79c1c5;">개인 관리번호와 전담 관리팀</b>이 배정된다.
-      특수관리시설은 교도소보다 고급 주거시설에 가까운 형태로 운영되며
-      장기간 생활하는 대상자의 스트레스와 능력 안정성을 함께 관리한다.
-    </div>
+'''
+    html = html[:start] + new + html[end:]
 
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:18px;">
+# 08 support cards + cooperation table -> management cycle diagram
+start = html.find('    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:7px;margin-bottom:18px;">', html.find('<!-- 08 CONTROL PROTOCOL -->'))
+end = html.find('    <div style="font-size:10px;line-height:1.8;color:#819da0;">', start)
+if start != -1 and end != -1:
+    # retain explanatory paragraph in between by replacing whole visual+paragraph+table with integrated diagram and paragraph
+    new = '''    <!-- 관리 순환 다이어그램 -->
+    <div style="padding:15px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;margin-bottom:18px;">
+      <div style="font-size:9px;color:#5d969d;letter-spacing:2px;margin-bottom:13px;">MANAGEMENT CYCLE</div>
 
-      <div style="padding:12px;background:#102126;border-radius:7px;">
-        <div style="font-size:9px;color:#5d969d;margin-bottom:5px;">PROVIDED</div>
-        <b style="font-size:11px;color:#dce8e9;">생활 지원</b>
-        <div style="font-size:9px;color:#789093;margin-top:4px;line-height:1.6;">
-          개인 주거공간<br>음식 · 책 · 게임 · 의류
+      <div style="display:flex;align-items:center;gap:6px;text-align:center;margin-bottom:13px;">
+        <div style="flex:1;padding:10px 5px;background:#10262c;border-radius:7px;">
+          <b style="font-size:10px;color:#dce8e9;">생활 지원</b>
+          <div style="font-size:8px;color:#789093;margin-top:4px;">주거 · 음식 · 여가</div>
+        </div>
+        <div style="color:#4f7e83;">→</div>
+        <div style="flex:1;padding:10px 5px;background:#10262c;border-radius:7px;">
+          <b style="font-size:10px;color:#dce8e9;">스트레스 감소</b>
+          <div style="font-size:8px;color:#789093;margin-top:4px;">안정성 유지</div>
+        </div>
+        <div style="color:#4f7e83;">→</div>
+        <div style="flex:1;padding:10px 5px;background:#143037;border:1px solid #39717a;border-radius:7px;">
+          <b style="font-size:10px;color:#dff3f4;">협조 유도</b>
+          <div style="font-size:8px;color:#83a6a9;margin-top:4px;">활동범위 확대</div>
         </div>
       </div>
 
-      <div style="padding:12px;background:#102126;border-radius:7px;">
-        <div style="font-size:9px;color:#5d969d;margin-bottom:5px;">PURPOSE</div>
-        <b style="font-size:11px;color:#dce8e9;">폭주 예방</b>
-        <div style="font-size:9px;color:#789093;margin-top:4px;line-height:1.6;">
-          스트레스 감소<br>능력 안정성 유지
-        </div>
+      <div style="display:flex;align-items:center;gap:8px;padding-top:12px;border-top:1px solid #24454d;">
+        <div style="font-size:9px;color:#79c1c5;min-width:54px;">협조 ↑</div>
+        <div style="flex:1;height:6px;background:#14272c;border-radius:10px;overflow:hidden;"><div style="width:78%;height:100%;background:#5ca5aa;"></div></div>
+        <div style="font-size:9px;color:#91adb0;">자유 확대</div>
       </div>
 
+      <div style="display:flex;align-items:center;gap:8px;margin-top:9px;">
+        <div style="font-size:9px;color:#d58a90;min-width:54px;">위반 ↑</div>
+        <div style="flex:1;height:6px;background:#14272c;border-radius:10px;overflow:hidden;"><div style="width:72%;height:100%;background:#b75f67;"></div></div>
+        <div style="font-size:9px;color:#b9979a;">허가 축소</div>
+      </div>
     </div>
 
     <div style="font-size:11px;line-height:1.85;color:#91a7a9;margin-bottom:18px;">
@@ -586,56 +273,9 @@ html,body{
       <b style="color:#79c1c5;">스트레스 누적에 따른 능력 폭주를 예방하기 위한 관리방식</b>이기도 하다.
     </div>
 
-    <div style="border:1px solid #1d3940;border-radius:8px;overflow:hidden;margin-bottom:18px;">
+'''
+    html = html[:start] + new + html[end:]
 
-      <div style="display:grid;grid-template-columns:80px 1fr;padding:11px 13px;background:#102126;border-bottom:1px solid #1d3940;">
-        <b style="font-size:10px;color:#79c1c5;">협조</b>
-        <span style="font-size:10px;color:#9bb0b2;">자유시간 · 활동범위 확대</span>
-      </div>
-
-      <div style="display:grid;grid-template-columns:80px 1fr;padding:11px 13px;background:#17191d;">
-        <b style="font-size:10px;color:#d58a90;">규정 위반</b>
-        <span style="font-size:10px;color:#b9979a;">활동범위 축소 · 각종 허가 보류</span>
-      </div>
-
-    </div>
-
-    <div style="font-size:10px;line-height:1.8;color:#819da0;">
-      협조적인 대상에게는 더 넓은 자유시간과 활동범위를 제공하고,
-      규정을 반복적으로 위반하면 각종 허가와 활동범위를 축소한다.
-      특히 최상위 능력인은 벽이나 무장병력만으로 구속할 수 없기 때문에
-      정부 역시 불필요하게 대상자를 자극하지 않는 것을 원칙으로 한다.
-    </div>
-
-    <div style="margin-top:20px;padding:20px;background:#0d2025;border:1px solid #31545c;border-radius:10px;text-align:center;">
-
-      <div style="font-size:9px;letter-spacing:3px;color:#5f949a;margin-bottom:9px;">
-        CONTROL PRINCIPLE
-      </div>
-
-      <div style="font-size:13px;line-height:1.8;font-weight:700;color:#dbe9ea;">
-        강제로 복종시키는 것이 아니라,<br>
-        <span style="color:#79c1c5;">
-          저항하는 것보다 협조하는 편이 유리하다고 판단하게 만든다.
-        </span>
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- FOOTER -->
-  <div style="padding:18px 28px;background:#050c0f;border-top:1px solid #18292e;display:flex;justify-content:space-between;align-items:center;">
-
-    <div style="font-size:8px;color:#3e5c61;letter-spacing:2px;">
-      NAMI // INTERNAL DATABASE
-    </div>
-
-    <div style="font-size:8px;color:#663f44;letter-spacing:1px;">
-      UNAUTHORIZED ACCESS PROHIBITED
-    </div>
-
-  </div>
-
-</div>
+out = Path("/mnt/data/NAMS_diagram_revision.html")
+out.write_text(html, encoding="utf-8")
+print(f"완료: {out.name} ({len(html):,}자)")
