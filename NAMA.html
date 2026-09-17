@@ -33,6 +33,36 @@ html,body{
 }
 </style>
 
+<style>
+/* READABILITY / VISUAL RHYTHM */
+@media (min-width:601px){
+  [style*="font-size:8px"]{font-size:9px !important;}
+  [style*="font-size:9px"]{font-size:10px !important;}
+  [style*="font-size:10px"]{font-size:11px !important;}
+  [style*="font-size:11px"]{font-size:12px !important;}
+  [style*="font-size:12px"]{font-size:13px !important;}
+}
+
+/* 섹션 제목 아래 포인트 라인 */
+.section-accent-line{
+  width:42px;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,#79c1c5,rgba(121,193,197,0));
+  margin-top:9px;
+}
+.section-accent-line.red{
+  background:linear-gradient(90deg,#df737b,rgba(223,115,123,0));
+}
+
+/* 긴 문서에서 카드들이 한 덩어리로 보이지 않도록 밝은 상단 하이라이트 */
+.visual-lift{
+  box-shadow:inset 0 1px 0 rgba(183,220,222,.08),0 8px 22px rgba(0,0,0,.10);
+}
+.visual-lift-red{
+  box-shadow:inset 0 1px 0 rgba(240,149,157,.10),0 8px 22px rgba(0,0,0,.12);
+}
+</style>
+
+
 <div style="font-family:'Pretendard','Noto Sans KR','Apple SD Gothic Neo',sans-serif;max-width:780px;margin:0 auto;background:#071116;color:#dce8e9;border:1px solid #1c343b;border-radius:18px;overflow:hidden;box-sizing:border-box;box-shadow:0 18px 50px rgba(0,0,0,.35);">
 
   <!-- HEADER -->
@@ -64,6 +94,7 @@ html,body{
     <div style="margin-bottom:18px;">
       <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">01 / WORLD</span>
       <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">세계관</div>
+      <div class="section-accent-line"></div>
     </div>
 
     <div style="height:220px;border-radius:10px;margin-bottom:22px;overflow:hidden;border:1px solid #31525a;">
@@ -80,7 +111,7 @@ html,body{
     </div>
 
     <!-- 핵심 정보 : FLOW DIAGRAM -->
-    <div style="margin-bottom:22px;padding:16px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;">
+    <div class="visual-lift" style="margin-bottom:22px;padding:16px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;">
       <div style="font-size:9px;color:#5d969d;letter-spacing:2px;margin-bottom:14px;">ABILITY LIFE CYCLE</div>
 
       <div style="display:flex;align-items:stretch;gap:6px;">
@@ -142,6 +173,7 @@ html,body{
     <div style="margin-bottom:18px;">
       <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">02 / CLASSIFICATION</span>
       <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">능력 등급</div>
+      <div class="section-accent-line"></div>
     </div>
 
     <div style="height:190px;border:1px solid #31525a;border-radius:10px;margin-bottom:22px;overflow:hidden;">
@@ -162,7 +194,7 @@ html,body{
     </div>
 
     <!-- 등급 다이어그램 -->
-    <div style="padding:15px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;">
+    <div class="visual-lift" style="padding:15px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;">
       <div style="font-size:9px;color:#5d969d;letter-spacing:2px;margin-bottom:13px;">ABILITY CLASSIFICATION SCALE</div>
 
       <div style="display:flex;align-items:center;gap:5px;margin-bottom:10px;">
@@ -210,6 +242,7 @@ html,body{
     <div style="margin-bottom:18px;">
       <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">03 / RESTRICTIONS</span>
       <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">능력인들의 제한</div>
+      <div class="section-accent-line"></div>
     </div>
 
     <div style="height:220px;border-radius:10px;margin-bottom:22px;overflow:hidden;border:1px solid #31525a;">
@@ -225,7 +258,7 @@ html,body{
     </div>
 
     <!-- 제한 강도 게이지 -->
-    <div style="padding:15px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;">
+    <div class="visual-lift" style="padding:15px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;">
       <div style="font-size:9px;color:#5d969d;letter-spacing:2px;margin-bottom:14px;">RESTRICTION LEVEL</div>
 
       <div style="margin-bottom:14px;">
@@ -285,6 +318,7 @@ html,body{
     <div style="margin-bottom:18px;">
       <span style="font-size:10px;color:#b66068;letter-spacing:3px;">04 / EXTREME RISK</span>
       <div style="font-size:22px;font-weight:900;color:#f0dfe1;margin-top:5px;">S++ 특별관리대상</div>
+      <div class="section-accent-line red"></div>
     </div>
 
     <div style="height:220px;border:1px solid #71383e;border-radius:10px;margin-bottom:18px;overflow:hidden;">
@@ -304,7 +338,7 @@ html,body{
     </div>
 
     <!-- S++ 관리 구조 다이어그램 -->
-    <div style="padding:14px;background:#211216;border:1px solid #512a30;border-radius:9px;margin-bottom:18px;">
+    <div class="visual-lift-red" style="padding:14px;background:#211216;border:1px solid #512a30;border-radius:9px;margin-bottom:18px;">
       <div style="font-size:9px;color:#a9666c;letter-spacing:2px;margin-bottom:12px;">CONTAINMENT STRUCTURE</div>
       <div style="display:flex;align-items:center;gap:6px;text-align:center;">
         <div style="flex:1;padding:10px 5px;background:#2a1519;border-radius:7px;">
@@ -336,7 +370,7 @@ html,body{
       </div>
     </div>
 
-    <div style="margin-top:18px;padding:15px;background:#2a1317;border:1px solid #7a343c;border-radius:8px;">
+    <div class="visual-lift-red" style="margin-top:18px;padding:15px;background:#2a1317;border:1px solid #7a343c;border-radius:8px;">
 
       <div style="font-size:9px;color:#d06770;letter-spacing:2px;margin-bottom:7px;">CONTROL METHOD</div>
 
@@ -362,6 +396,7 @@ html,body{
     <div style="margin-bottom:18px;">
       <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">05 / CIVILIAN</span>
       <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">비능력인</div>
+      <div class="section-accent-line"></div>
     </div>
 
     <!-- IMAGE : 비능력인 -->
@@ -371,7 +406,7 @@ html,body{
            style="width:100%;height:100%;object-fit:cover;display:block;">
     </div>
 
-    <div style="display:flex;align-items:center;gap:15px;padding:15px;background:#102126;border:1px solid #1d3940;border-radius:8px;margin-bottom:18px;">
+    <div class="visual-lift" style="display:flex;align-items:center;gap:15px;padding:15px;background:#102126;border:1px solid #1d3940;border-radius:8px;margin-bottom:18px;">
 
       <div style="font-size:27px;font-weight:900;color:#e7f2f2;">
         99%
@@ -408,7 +443,7 @@ html,body{
       발각될 경우 국가는 보호자로부터 해당 능력인의 양육권을 박탈한다.
     </div>
 
-    <div style="margin-top:16px;padding:13px 15px;background:#0d2025;border-radius:7px;font-size:10px;line-height:1.8;color:#819da0;">
+    <div class="visual-lift" style="margin-top:16px;padding:13px 15px;background:#0d2025;border-radius:7px;font-size:10px;line-height:1.8;color:#819da0;">
       <b style="color:#b8cdcf;">비능력자 양육센터</b><br>
       보호자가 능력특별법 위반으로 양육권을 박탈당한 경우,
       <b style="color:#dce8e9;">해당 아동은 능력 유무와 관계없이 국가 보호 대상</b>으로 편입된다.
@@ -425,6 +460,7 @@ html,body{
     <div style="margin-bottom:18px;">
       <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">06 / ORGANIZATION</span>
       <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">국가능력관리원</div>
+      <div class="section-accent-line"></div>
     </div>
 
     <!-- IMAGE : 국가능력관리원 -->
@@ -442,7 +478,7 @@ html,body{
     <!-- 조직 다이어그램 -->
     <div style="font-size:9px;color:#5d969d;letter-spacing:2px;margin-bottom:10px;">ORGANIZATION MAP</div>
 
-    <div style="padding:15px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;margin-bottom:18px;text-align:center;">
+    <div class="visual-lift" style="padding:15px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;margin-bottom:18px;text-align:center;">
       <div style="display:inline-block;padding:9px 18px;background:#143037;border:1px solid #39717a;border-radius:7px;font-size:11px;font-weight:700;color:#dce9ea;">
         국가능력관리원
       </div>
@@ -473,6 +509,7 @@ html,body{
     <div style="margin-bottom:18px;">
       <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">07 / DIAGNOSTIC DIVISION</span>
       <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">진단부</div>
+      <div class="section-accent-line"></div>
     </div>
 
     <!-- IMAGE : 진단부 -->
@@ -489,7 +526,7 @@ html,body{
     </div>
 
     <!-- 진단 프로세스 다이어그램 -->
-    <div style="padding:15px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;margin-bottom:20px;">
+    <div class="visual-lift" style="padding:15px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;margin-bottom:20px;">
       <div style="font-size:9px;color:#5d969d;letter-spacing:2px;margin-bottom:13px;">DIAGNOSTIC PROCESS</div>
       <div style="display:flex;align-items:center;gap:5px;text-align:center;">
         <div style="flex:1;padding:10px 4px;background:#10262c;border-radius:7px;">
@@ -533,7 +570,7 @@ html,body{
     </div>
 
     <!-- 정서안정접촉 -->
-    <div style="margin-top:20px;padding:16px;background:#0d2228;border:1px solid #24454d;border-radius:8px;">
+    <div class="visual-lift" style="margin-top:20px;padding:16px;background:#0d2228;border:1px solid #24454d;border-radius:8px;">
 
       <div style="font-size:9px;color:#5f969c;letter-spacing:2px;margin-bottom:8px;">
         EMOTIONAL STABILIZATION CONTACT
@@ -566,6 +603,7 @@ html,body{
     <div style="margin-bottom:18px;">
       <span style="font-size:10px;color:#5d969d;letter-spacing:3px;">08 / CONTROL PROTOCOL</span>
       <div style="font-size:21px;font-weight:800;color:#eaf3f3;margin-top:5px;">고위험 능력인 관리</div>
+      <div class="section-accent-line"></div>
     </div>
 
     <!-- IMAGE : 고위험 능력인 관리 -->
@@ -583,7 +621,7 @@ html,body{
     </div>
 
     <!-- 관리 순환 다이어그램 -->
-    <div style="padding:15px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;margin-bottom:18px;">
+    <div class="visual-lift" style="padding:15px;background:#0c1d22;border:1px solid #1d3940;border-radius:10px;margin-bottom:18px;">
       <div style="font-size:9px;color:#5d969d;letter-spacing:2px;margin-bottom:13px;">MANAGEMENT CYCLE</div>
 
       <div style="display:flex;align-items:center;gap:6px;text-align:center;margin-bottom:13px;">
@@ -630,7 +668,7 @@ html,body{
       정부 역시 불필요하게 대상자를 자극하지 않는 것을 원칙으로 한다.
     </div>
 
-    <div style="margin-top:20px;padding:20px;background:#0d2025;border:1px solid #31545c;border-radius:10px;text-align:center;">
+    <div class="visual-lift" style="margin-top:20px;padding:20px;background:#0d2025;border:1px solid #31545c;border-radius:10px;text-align:center;">
 
       <div style="font-size:9px;letter-spacing:3px;color:#5f949a;margin-bottom:9px;">
         CONTROL PRINCIPLE
@@ -679,17 +717,13 @@ html,body{
   <div style="font-size:25px;font-weight:900;color:#f1e7e8;line-height:1.25;margin-bottom:8px;">
     S++ 고위험 특별관리대상
   </div>
+  <div class="section-accent-line red" style="margin-bottom:10px;"></div>
 
   <div style="font-size:9px;color:#806b6f;line-height:1.6;">
     국가능력관리원 · 특별관리대상자 통합기록
   </div>
 
 </div>
-
-    <div style="padding:7px 10px;background:#31161b;border:1px solid #874049;border-radius:4px;color:#ec858e;font-size:8px;font-weight:800;letter-spacing:1.5px;white-space:nowrap;">
-      TOP SECRET / S++
-    </div>
-  </div>
 
 
 <!-- PROFILE -->
@@ -715,7 +749,7 @@ html,body{
   <!-- BASIC DATA -->
   <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:8px;">
 
-    <div style="padding:11px 5px;background:#1d1518;border:1px solid #42292e;border-radius:7px;text-align:center;">
+    <div class="visual-lift-red" style="padding:11px 5px;background:#1d1518;border:1px solid #42292e;border-radius:7px;text-align:center;">
       <div style="font-size:7px;color:#866c70;letter-spacing:.5px;margin-bottom:4px;">
         AGE
       </div>
@@ -724,7 +758,7 @@ html,body{
       </b>
     </div>
 
-    <div style="padding:11px 5px;background:#1d1518;border:1px solid #42292e;border-radius:7px;text-align:center;">
+    <div class="visual-lift-red" style="padding:11px 5px;background:#1d1518;border:1px solid #42292e;border-radius:7px;text-align:center;">
       <div style="font-size:7px;color:#866c70;letter-spacing:.5px;margin-bottom:4px;">
         HEIGHT
       </div>
@@ -755,7 +789,7 @@ html,body{
 
 
   <!-- CURRENT STATUS -->
-  <div style="padding:12px 14px;background:#1d1518;border:1px solid #42292e;border-radius:8px;">
+  <div class="visual-lift-red" style="padding:12px 14px;background:#1d1518;border:1px solid #42292e;border-radius:8px;">
     <div style="font-size:8px;color:#866c70;letter-spacing:1.4px;margin-bottom:7px;">
       CURRENT STATUS
     </div>
@@ -772,7 +806,7 @@ html,body{
 
 
   <!-- PERSONALITY -->
-  <div style="padding:16px;background:#11191d;border:1px solid #29373c;border-radius:9px;margin-bottom:12px;">
+  <div class="visual-lift" style="padding:16px;background:#11191d;border:1px solid #29373c;border-radius:9px;margin-bottom:18px;">
     <div style="font-size:9px;color:#66878c;letter-spacing:2px;margin-bottom:9px;">
       PERSONALITY / BEHAVIOR
     </div>
@@ -793,7 +827,7 @@ html,body{
 
 
   <!-- SPEECH -->
-  <div style="padding:16px;background:#11191d;border:1px solid #29373c;border-radius:9px;margin-bottom:18px;">
+  <div class="visual-lift" style="padding:16px;background:#11191d;border:1px solid #29373c;border-radius:9px;margin-bottom:18px;">
     <div style="font-size:9px;color:#66878c;letter-spacing:2px;margin-bottom:9px;">
       SPEECH PATTERN
     </div>
@@ -819,7 +853,7 @@ html,body{
     </div>
   </div>
 
-  <div style="padding:17px;background:#0f1b20;border:1px solid #29454c;border-radius:9px;margin-bottom:12px;">
+  <div class="visual-lift" style="padding:17px;background:#0f1b20;border:1px solid #29454c;border-radius:9px;margin-bottom:18px;">
 
     <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:12px;margin-bottom:12px;">
       <div>
@@ -850,47 +884,10 @@ html,body{
 
   </div>
 
-
-  <!-- ABILITY RULE DIAGRAM -->
-  <div style="padding:15px;background:#10191d;border:1px solid #26383e;border-radius:9px;margin-bottom:12px;">
-    <div style="font-size:9px;color:#668f94;letter-spacing:2px;margin-bottom:13px;">
-      MANIFESTATION PROCESS
-    </div>
-
-    <div style="display:flex;align-items:center;gap:5px;text-align:center;">
-      <div style="flex:1;padding:11px 5px;background:#14262b;border-radius:7px;">
-        <b style="font-size:10px;color:#dce8e9;">의도</b>
-        <div style="font-size:8px;color:#789093;margin-top:4px;">현실화 의지</div>
-      </div>
-
-      <div style="color:#537e83;">→</div>
-
-      <div style="flex:1;padding:11px 5px;background:#14262b;border-radius:7px;">
-        <b style="font-size:10px;color:#dce8e9;">상상</b>
-        <div style="font-size:8px;color:#789093;margin-top:4px;">현상 또는 결과</div>
-      </div>
-
-      <div style="color:#537e83;">→</div>
-
-      <div style="flex:1;padding:11px 5px;background:#14262b;border-radius:7px;">
-        <b style="font-size:10px;color:#dce8e9;">현실 개변</b>
-        <div style="font-size:8px;color:#789093;margin-top:4px;">비생물 · 물리현상</div>
-      </div>
-
-      <div style="color:#9b535b;">→</div>
-
-      <div style="flex:1;padding:11px 5px;background:#30171b;border:1px solid #6e373e;border-radius:7px;">
-        <b style="font-size:10px;color:#efb3b8;">결과</b>
-        <div style="font-size:8px;color:#ae7378;margin-top:4px;">현실화</div>
-      </div>
-    </div>
-  </div>
-
-
 <!-- ABILITY LIMITS -->
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px;">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:18px;">
 
-  <div style="padding:15px;background:#102126;border:1px solid #29464c;border-radius:8px;">
+  <div class="visual-lift" style="padding:15px;background:#102126;border:1px solid #29464c;border-radius:8px;">
     <div style="font-size:8px;color:#60969c;letter-spacing:1.4px;margin-bottom:10px;">
       CONFIRMED / 가능
     </div>
@@ -900,7 +897,7 @@ html,body{
       ✓ 구조물 · 장치 상태 개변<br>
       ✓ 자연현상 · 자연재해 발생<br>
       ✓ 결과 중심 현실화<br>
-      ✓ 본인 신체 회복
+      ✓ 본인 신체 회복 <span style="color:#7f999c;">(부상 시 통각은 정상적으로 느낌)</span>
     </div>
   </div>
 
@@ -922,7 +919,7 @@ html,body{
 
 
   <!-- RESULT BASED MANIFESTATION -->
-  <div style="padding:16px;background:#281519;border:1px solid #67363d;border-radius:9px;margin-bottom:12px;">
+  <div class="visual-lift-red" style="padding:16px;background:#281519;border:1px solid #67363d;border-radius:9px;margin-bottom:18px;">
     <div style="font-size:9px;color:#c36b73;letter-spacing:2px;margin-bottom:8px;">
       RESULT-BASED MANIFESTATION
     </div>
@@ -938,38 +935,14 @@ html,body{
       해당 결과에 도달하는 인과를 형성한다.
     </div>
 
-    <div style="margin-top:12px;padding:12px;background:#32191e;border-radius:7px;font-size:10px;line-height:1.85;color:#cdaeb1;">
+    <div style="margin-top:12px;padding:12px;background:#402127;border:1px solid #62343b;border-radius:7px;font-size:10px;line-height:1.85;color:#cdaeb1;">
       예: 특정 인물의 죽음을 결과로 설정할 경우 심장을 직접 정지시키는 것은 불가능하다.
       대신 해당 장소에 지진이 발생하거나 구조물이 붕괴하는 등
       <b style="color:#f09ba2;">물리환경이 변화하여 동일한 결과에 도달할 수 있다.</b>
     </div>
   </div>
 
-
-  <!-- BIOLOGICAL EXCEPTION -->
-  <div style="padding:16px;background:#111d21;border:1px solid #2c474d;border-radius:9px;margin-bottom:12px;">
-    <div style="font-size:9px;color:#63949a;letter-spacing:2px;margin-bottom:8px;">
-      BIOLOGICAL EXCEPTION
-    </div>
-
-    <div style="font-size:14px;font-weight:900;color:#d9e8e9;margin-bottom:8px;">
-      생명체 제한의 유일한 예외 — 성유현 본인
-    </div>
-
-    <div style="font-size:10px;line-height:1.9;color:#aabbbd;">
-      타인의 신체에는 직접적인 현실개변이 불가능하지만
-      <b style="color:#dce9ea;">성유현 자신의 신체에는 능력 적용이 가능</b>하다.
-      깊은 열상과 출혈 등 신체 손상을 정상 상태로 회복시키는 현상이 확인되었다.
-    </div>
-
-    <div style="margin-top:10px;padding:11px 12px;background:#17262b;border-left:3px solid #729aa0;border-radius:0 6px 6px 0;font-size:10px;line-height:1.85;color:#b6c5c7;">
-      회복 능력은 통각을 차단하지 않는다.
-      <b style="color:#dfe9ea;">부상을 입는 순간에는 정상적으로 고통</b>을 느낀다.
-    </div>
-  </div>
-
-
-  <!-- UNKNOWN -->
+<!-- UNKNOWN -->
   <div style="padding:15px;background:#181719;border:1px dashed #6a5559;border-radius:9px;margin-bottom:18px;">
     <div style="display:flex;justify-content:space-between;gap:10px;margin-bottom:9px;">
       <div style="font-size:9px;color:#9c7d81;letter-spacing:2px;">
@@ -988,55 +961,8 @@ html,body{
     </div>
   </div>
 
-
-  <!-- RISK CLASSIFICATION -->
-  <div style="padding:16px;background:#2b1317;border:1px solid #7a343c;border-radius:9px;margin-bottom:18px;">
-
-    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:11px;">
-      <div>
-        <div style="font-size:9px;color:#d36e77;letter-spacing:2px;">
-          RISK CLASSIFICATION
-        </div>
-        <div style="font-size:16px;font-weight:900;color:#f0c8cc;margin-top:3px;">
-          위험등급 분류
-        </div>
-      </div>
-
-      <div style="font-size:26px;font-weight:900;color:#ee7e87;">
-        S++
-      </div>
-    </div>
-
-    <div style="height:8px;background:#3a1c21;border-radius:10px;overflow:hidden;margin-bottom:12px;">
-      <div style="width:100%;height:100%;background:linear-gradient(90deg,#76363e,#df737c);"></div>
-    </div>
-
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-      <div style="padding:10px;background:#35191e;border-radius:6px;">
-        <div style="font-size:8px;color:#a8646a;">물리적 구속 효용</div>
-        <div style="font-size:11px;font-weight:800;color:#e6b3b7;margin-top:3px;">사실상 없음</div>
-      </div>
-
-      <div style="padding:10px;background:#35191e;border-radius:6px;">
-        <div style="font-size:8px;color:#a8646a;">능력 상한</div>
-        <div style="font-size:11px;font-weight:800;color:#e6b3b7;margin-top:3px;">측정 불가</div>
-      </div>
-
-      <div style="padding:10px;background:#35191e;border-radius:6px;">
-        <div style="font-size:8px;color:#a8646a;">현실화 과정</div>
-        <div style="font-size:11px;font-weight:800;color:#e6b3b7;margin-top:3px;">예측 곤란</div>
-      </div>
-
-      <div style="padding:10px;background:#35191e;border-radius:6px;">
-        <div style="font-size:8px;color:#a8646a;">관리 상태</div>
-        <div style="font-size:11px;font-weight:800;color:#f0959d;margin-top:3px;">조건부 협조</div>
-      </div>
-    </div>
-  </div>
-
-
   <!-- CONTROL -->
-  <div style="padding:16px;background:#170e11;border:1px solid #71383e;border-radius:9px;margin-bottom:22px;position:relative;">
+  <div class="visual-lift-red" style="padding:16px;background:#170e11;border:1px solid #71383e;border-radius:9px;margin-bottom:22px;position:relative;">
 
     <div style="position:absolute;right:12px;top:12px;padding:5px 8px;border:2px solid #873d46;color:#b85a63;font-size:8px;font-weight:900;letter-spacing:1px;transform:rotate(4deg);opacity:.85;">
       RESTRICTED
@@ -1112,7 +1038,7 @@ html,body{
 
 
   <!-- INCIDENT INTERNAL RECORD -->
-  <div style="padding:17px;background:#170e11;border:1px solid #71383e;border-radius:9px;margin-bottom:18px;">
+  <div class="visual-lift-red" style="padding:17px;background:#170e11;border:1px solid #71383e;border-radius:9px;margin-bottom:18px;">
 
     <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px;">
       <div>
@@ -1167,34 +1093,6 @@ html,body{
       </div>
 
     </div>
-  </div>
-
-
-  <!-- FINAL ASSESSMENT -->
-  <div style="padding:17px;background:#2b1317;border-left:4px solid #c35c65;border-radius:0 8px 8px 0;">
-
-    <div style="font-size:9px;color:#d06d75;letter-spacing:2px;margin-bottom:7px;">
-      FINAL ASSESSMENT
-    </div>
-
-    <div style="font-size:11px;line-height:1.9;color:#d0aeb1;">
-      대상자의 위험성은 단순한 출력보다
-      <b style="color:#f1c9cd;">현실화 과정의 높은 자유도와 결과 중심 개변의 예측 불가능성</b>에 있다.
-      수갑·구속복·총기·격리시설을 포함한 일반적인 물리적 통제수단은 모두 대상자의 능력 범위에 포함될 수 있다.
-    </div>
-
-    <div style="margin-top:9px;font-size:11px;line-height:1.9;color:#d0aeb1;">
-      현 시점에서 대상자는 충분한 판단능력을 유지하고 있으며 자신의 능력 사용을 의식적으로 억제하고 있다.
-      따라서 관리 원칙은 강제 제압보다
-      <b style="color:#ef9098;">정서 안정 · 가족 통제수단 유지 · 자발적 협조 유도</b>를 최우선으로 한다.
-    </div>
-
-    <div style="margin-top:13px;padding:11px 12px;background:#37191e;border:1px solid #683039;border-radius:6px;font-size:9px;line-height:1.8;color:#d8a5aa;">
-      <b style="color:#f098a0;">관리부 주의:</b>
-      현재의 수용 상태를 대상자에 대한 물리적 통제 성공으로 판단하지 말 것.
-      대상자는 탈출하지 못하는 것이 아니라, 현재 탈출하지 않는 것을 선택하고 있음.
-    </div>
-
   </div>
 
 </div>
