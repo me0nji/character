@@ -684,56 +684,81 @@ html,body{
 
 
 <!-- PROFILE -->
-<div style="display:grid;grid-template-columns:minmax(0,1.45fr) minmax(230px,.55fr);gap:14px;margin-bottom:18px;">
+<div style="margin-bottom:18px;">
 
-  <div style="height:390px;border:1px solid #583139;border-radius:10px;overflow:hidden;background:#171215;position:relative;">
+  <!-- SUBJECT IMAGE -->
+  <div style="width:100%;border:1px solid #583139;border-radius:10px;overflow:hidden;background:#171215;position:relative;margin-bottom:9px;">
     <img src="images/SYH.png"
          alt="성유현"
-         style="width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;">
+         style="width:100%;height:auto;display:block;">
 
-    <div style="position:absolute;left:0;right:0;bottom:0;padding:38px 15px 14px;background:linear-gradient(transparent,rgba(8,8,10,.94));">
-      <div style="font-size:8px;color:#b1797f;letter-spacing:1.5px;">SUBJECT / SYH-01</div>
-      <div style="font-size:22px;font-weight:900;color:#f0e5e6;margin-top:3px;">성유현</div>
+    <div style="position:absolute;left:0;right:0;bottom:0;padding:45px 15px 14px;background:linear-gradient(transparent,rgba(8,8,10,.94));">
+      <div style="font-size:8px;color:#b1797f;letter-spacing:1.5px;">
+        SUBJECT / SYH-01
+      </div>
+      <div style="font-size:22px;font-weight:900;color:#f0e5e6;margin-top:3px;">
+        성유현
+      </div>
     </div>
   </div>
 
-  <div style="display:flex;flex-direction:column;gap:8px;">
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;">
-      <div style="padding:13px;background:#1d1518;border:1px solid #42292e;border-radius:8px;">
-        <div style="font-size:8px;color:#866c70;margin-bottom:4px;">AGE</div>
-        <b style="font-size:15px;color:#e3d6d8;">25세</b>
-      </div>
+  <!-- BASIC DATA -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:8px;">
 
-      <div style="padding:13px;background:#1d1518;border:1px solid #42292e;border-radius:8px;">
-        <div style="font-size:8px;color:#866c70;margin-bottom:4px;">HEIGHT</div>
-        <b style="font-size:15px;color:#e3d6d8;">183cm</b>
+    <div style="padding:11px 5px;background:#1d1518;border:1px solid #42292e;border-radius:7px;text-align:center;">
+      <div style="font-size:7px;color:#866c70;letter-spacing:.5px;margin-bottom:4px;">
+        AGE
       </div>
+      <b style="font-size:12px;color:#e3d6d8;">
+        27세
+      </b>
     </div>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;">
-      <div style="padding:13px;background:#172127;border:1px solid #29434a;border-radius:8px;">
-        <div style="font-size:8px;color:#66878c;margin-bottom:4px;">ABILITY GRADE</div>
-        <b style="font-size:16px;color:#9bcbd0;">S+</b>
+    <div style="padding:11px 5px;background:#1d1518;border:1px solid #42292e;border-radius:7px;text-align:center;">
+      <div style="font-size:7px;color:#866c70;letter-spacing:.5px;margin-bottom:4px;">
+        HEIGHT
       </div>
-
-      <div style="padding:13px;background:#35171c;border:1px solid #824049;border-radius:8px;">
-        <div style="font-size:8px;color:#bd6870;margin-bottom:4px;">RISK GRADE</div>
-        <b style="font-size:16px;color:#f0959d;">S++</b>
-      </div>
+      <b style="font-size:12px;color:#e3d6d8;">
+        183cm
+      </b>
     </div>
 
-    <div style="padding:14px;background:#1d1518;border:1px solid #42292e;border-radius:8px;flex:1;">
-      <div style="font-size:8px;color:#866c70;letter-spacing:1.4px;margin-bottom:9px;">CURRENT STATUS</div>
-      <div style="font-size:10px;line-height:2;color:#baa7aa;">
-        특별관리시설 수용<br>
-        전담 관리팀 상시 배정<br>
-        외출 및 외부 접촉 제한<br>
-        <span style="color:#db8d94;">표면적 협조 상태</span>
+    <div style="padding:11px 5px;background:#172127;border:1px solid #29434a;border-radius:7px;text-align:center;">
+      <div style="font-size:7px;color:#66878c;letter-spacing:.5px;margin-bottom:4px;">
+        ABILITY
       </div>
+      <b style="font-size:13px;color:#9bcbd0;">
+        S+
+      </b>
+    </div>
+
+    <div style="padding:11px 5px;background:#35171c;border:1px solid #824049;border-radius:7px;text-align:center;">
+      <div style="font-size:7px;color:#bd6870;letter-spacing:.5px;margin-bottom:4px;">
+        RISK
+      </div>
+      <b style="font-size:13px;color:#f0959d;">
+        S++
+      </b>
     </div>
 
   </div>
+
+
+  <!-- CURRENT STATUS -->
+  <div style="padding:12px 14px;background:#1d1518;border:1px solid #42292e;border-radius:8px;">
+    <div style="font-size:8px;color:#866c70;letter-spacing:1.4px;margin-bottom:7px;">
+      CURRENT STATUS
+    </div>
+
+    <div style="font-size:10px;line-height:1.8;color:#baa7aa;">
+      특별관리시설 수용 · 전담 관리팀 상시 배정 · 외출 및 외부 접촉 제한<br>
+      <span style="color:#db8d94;">
+        조건부 · 표면적 협조 상태
+      </span>
+    </div>
+  </div>
+
 </div>
 
 
