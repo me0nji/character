@@ -1,0 +1,96 @@
+<div style="width:100%;box-sizing:border-box;padding:18px 14px;background:linear-gradient(160deg,#110e14,#1b1119 52%,#100e13);border:1px solid #75583d;border-radius:12px;color:#d8c9b9;font-family:Georgia,'Noto Serif KR',serif;font-size:13px;line-height:1.8;box-shadow:inset 0 0 45px rgba(100,34,49,.18)">
+
+  <div style="text-align:center;padding:22px 6px;border:1px solid #604832">
+    <div style="color:#a98b61;font-size:11px;letter-spacing:3px">✦ ALL HALLOWS' EVE ✦</div>
+    <div style="font-size:25px;color:#ead5ae;letter-spacing:2px;margin:12px 0">THE HOTEL</div>
+    <div style="color:#a99a8c;font-size:11px;letter-spacing:2px">AN INVITATION BEYOND MIDNIGHT</div>
+    <div style="margin:18px auto;width:65%;height:1px;background:#75583d"></div>
+    <div style="color:#c9ad80;font-size:17px">Ⅰ. 세계관 소개</div>
+    <div style="margin:15px 0;aspect-ratio:16/9;background:#29212a;border:1px solid #574338;overflow:hidden">
+      <img src="이미지주소" style="width:100%;height:100%;object-fit:cover" alt="세계관 이미지">
+    </div>
+    <div style="padding:12px;color:#c5b6a9;text-align:center">
+      이곳에 세계관 소개를 입력하세요.
+    </div>
+  </div>
+
+  <div style="text-align:center;color:#ad8a5d;margin:25px 0 12px;letter-spacing:2px;font-size:16px">Ⅱ. RULES OF STAY</div>
+  <div style="text-align:center;font-size:11px;color:#988579;margin-bottom:15px">투숙객 안내 사항</div>
+
+  <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin-bottom:28px">
+    <div style="padding:14px 10px;background:#241b22;border:1px solid #614a38;min-height:110px">
+      <div style="font-size:22px;color:#c9a36a">A</div>
+      <b style="color:#e0c7a3">규칙 제목</b>
+      <div style="font-size:12px;color:#b6a59b;margin-top:7px">규칙 내용을 입력하세요.</div>
+    </div>
+    <div style="padding:14px 10px;background:#241b22;border:1px solid #614a38;min-height:110px">
+      <div style="font-size:22px;color:#c9a36a">B</div>
+      <b style="color:#e0c7a3">규칙 제목</b>
+      <div style="font-size:12px;color:#b6a59b;margin-top:7px">규칙 내용을 입력하세요.</div>
+    </div>
+    <div style="padding:14px 10px;background:#241b22;border:1px solid #614a38;min-height:110px">
+      <div style="font-size:22px;color:#c9a36a">C</div>
+      <b style="color:#e0c7a3">규칙 제목</b>
+      <div style="font-size:12px;color:#b6a59b;margin-top:7px">규칙 내용을 입력하세요.</div>
+    </div>
+    <div style="padding:14px 10px;background:#241b22;border:1px solid #614a38;min-height:110px">
+      <div style="font-size:22px;color:#c9a36a">D</div>
+      <b style="color:#e0c7a3">규칙 제목</b>
+      <div style="font-size:12px;color:#b6a59b;margin-top:7px">규칙 내용을 입력하세요.</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;color:#cba978;font-size:17px;letter-spacing:2px">Ⅲ. THE RESIDENTS</div>
+  <div style="text-align:center;color:#978479;font-size:11px;letter-spacing:2px;margin:5px 0 20px">TEN SOULS AWAIT YOUR ARRIVAL</div>
+
+  <!-- 등장인물 01~10 -->
+  <div id="halloween-characters"></div>
+
+  <!-- 히든 -->
+  <div style="margin-top:28px;border:1px solid #72513e;padding:17px 12px;text-align:center;background:#1b151e">
+    <div style="color:#ae865c;letter-spacing:5px">? ? ?</div>
+    <div style="aspect-ratio:16/9;background:#29212a;border:1px solid #58413b;margin:15px 0;overflow:hidden">
+      <img src="히든이미지주소" alt="Hidden" style="width:100%;height:100%;object-fit:cover">
+    </div>
+    <div style="color:#dfc39b;font-size:20px;letter-spacing:4px">HIDDEN</div>
+    <div style="color:#98837e;font-size:11px;letter-spacing:2px;margin-top:6px">UNKNOWN ENTITY</div>
+  </div>
+
+  <!-- 엔딩 -->
+  <div style="text-align:center;padding:36px 5px 18px">
+    <div style="color:#8d6e53;letter-spacing:5px">✦ ✦ ✦</div>
+    <div style="color:#ebd2a8;font-size:27px;letter-spacing:4px;margin:15px 0 6px">GOOD LUCK</div>
+    <div style="color:#c7b3a0;font-size:14px">행운을 빕니다.</div>
+    <div style="height:1px;width:60%;margin:22px auto;background:#73553c"></div>
+    <div style="color:#96765e;font-size:10px;letter-spacing:3px">YOUR FATE AWAITS</div>
+  </div>
+</div>
+
+<script>
+  const characters = Array.from({length:10},(_,i)=>({
+    number:String(i+1).padStart(2,'0'),
+    name:'이름',
+    quote:'캐릭터 대사',
+    image:'이미지주소',
+    height:'내용 입력',
+    appearance:'내용 입력',
+    personality:'내용 입력'
+  }));
+
+  document.getElementById('halloween-characters').innerHTML =
+    characters.map(c=>`
+      <div style="margin:0 0 17px;padding:13px;border:1px solid #604938;background:linear-gradient(150deg,#251b24,#171319)">
+        <div style="color:#9e7954;font-size:10px;letter-spacing:3px;text-align:center">RESIDENT NO. ${c.number}</div>
+        <div style="aspect-ratio:16/9;background:#302630;border:1px solid #554135;margin:12px 0;overflow:hidden">
+          <img src="${c.image}" style="width:100%;height:100%;object-fit:cover" alt="">
+        </div>
+        <div style="text-align:center;color:#ead0a8;font-size:19px">${c.name}</div>
+        <div style="text-align:center;color:#c4a8a3;font-style:italic;margin:7px 0 14px">"${c.quote}"</div>
+        <table style="width:100%;border-collapse:collapse;font-size:12px;color:#cbbcb0">
+          <tr><td style="width:25%;padding:8px;border:1px solid #554139;color:#cba36e">키</td><td style="padding:8px;border:1px solid #554139">${c.height}</td></tr>
+          <tr><td style="padding:8px;border:1px solid #554139;color:#cba36e">외형</td><td style="padding:8px;border:1px solid #554139">${c.appearance}</td></tr>
+          <tr><td style="padding:8px;border:1px solid #554139;color:#cba36e">성격</td><td style="padding:8px;border:1px solid #554139">${c.personality}</td></tr>
+        </table>
+      </div>
+    `).join('');
+</script>
